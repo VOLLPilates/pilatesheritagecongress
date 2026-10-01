@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Heritage equipment page
+   ========================================================================== */
+
+.equipment-hero {
+  padding: 54px 0 30px;
+  background-color: var(--black);
+  background-image: url('/assets/images/backgrounds/equipment-bg.webp');
+  text-align: center;
+}
+
+.equipment-hero__logo {
+  width: 100%;
+  max-width: 352px;
+  margin: 27px auto;
+}
+
+.equipment-hero__title {
+  margin: 57px 0 16px; /* 27px logo spacing + 30px (margins collapse) */
+  color: #85520e;
+}
+
+.equipment-hero__lead {
+  margin-bottom: 30px;
+}
+
+.equipment-hero__cta {
+  font-size: 25px;
+  color: #85520e;
+}
+
+.equipment-list {
+  padding: 0 0 81px;
+  background: var(--black);
+}
+
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 54px 5.5%;
+  width: 80%;
+  max-width: 720px;
+  margin-inline: auto;
+  padding-top: 60px;
+}
+
+.equipment-grid img {
+  max-width: 340px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+/* a lone last item is centred across both columns */
+.equipment-grid li:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.equipment-list__cta {
+  margin-top: 74px;
+  padding: 0;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .equipment-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .equipment-list__cta .btn {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/pages/:slug", "destination": "/:slug/", "permanent": true },
+    { "source": "/pages/:slug/", "destination": "/:slug/", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/:slug", "destination": "/pages/:slug.html" },
+    { "source": "/:slug/", "destination": "/pages/:slug.html" }
+  ],
+  "headers": [
+    {
+      "source": "/assets/images/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/assets/(css|js)/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }]
+    }
+  ]
+}
