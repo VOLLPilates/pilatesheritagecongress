@@ -3,21 +3,35 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "redirects": [
-    { "source": "/pages/:slug", "destination": "/:slug/", "permanent": true },
-    { "source": "/pages/:slug/", "destination": "/:slug/", "permanent": true }
-  ],
-  "rewrites": [
-    { "source": "/:slug", "destination": "/pages/:slug.html" },
-    { "source": "/:slug/", "destination": "/pages/:slug.html" }
+    {
+      "source": "/pages/:slug",
+      "destination": "/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/pages/:slug/",
+      "destination": "/:slug/",
+      "permanent": true
+    }
   ],
   "headers": [
     {
       "source": "/assets/images/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     },
     {
       "source": "/assets/(css|js)/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
+        }
+      ]
     }
   ]
 }

@@ -5,7 +5,7 @@
 .equipment-hero {
   padding: 54px 0 30px;
   background-color: var(--black);
-  background-image: url('/assets/images/backgrounds/equipment-bg.webp');
+  background-image: url('../images/backgrounds/equipment-bg.webp');
   text-align: center;
 }
 

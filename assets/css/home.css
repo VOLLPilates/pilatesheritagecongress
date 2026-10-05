@@ -7,7 +7,7 @@
 .hero {
   padding: 40px 0;
   background-color: var(--navy);
-  background-image: url('/assets/images/backgrounds/background-hotel-heritage.webp');
+  background-image: url('../images/backgrounds/background-hotel-heritage.webp');
   text-align: center;
 }
 
@@ -135,7 +135,7 @@
   border-top: 10px solid var(--gold);
   border-bottom: 10px solid var(--gold);
   background-color: var(--navy);
-  background-image: url('/assets/images/backgrounds/background-joseph-pilates.webp');
+  background-image: url('../images/backgrounds/background-joseph-pilates.webp');
 }
 
 .welcome__inner {
@@ -292,7 +292,7 @@
 .people-section--photo {
   padding-top: 60px;
   background-color: var(--gold-dark);
-  background-image: url('/assets/images/backgrounds/ambassadors-bg.webp');
+  background-image: url('../images/backgrounds/ambassadors-bg.webp');
 }
 
 .people {

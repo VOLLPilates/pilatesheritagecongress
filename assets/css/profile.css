@@ -4,7 +4,7 @@
 
 .profile {
   background-color: var(--navy);
-  background-image: url('/assets/images/backgrounds/background-hotel-heritage.webp');
+  background-image: url('../images/backgrounds/background-hotel-heritage.webp');
 }
 
 .profile__inner {

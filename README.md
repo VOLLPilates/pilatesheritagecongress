@@ -6,10 +6,8 @@ Site estático do **International Pilates Heritage Congress** (pilatesheritageco
 
 ```
 index.html                 Home
-404.html                   Página de erro (servida automaticamente pela Vercel)
-pages/                     Páginas internas (uma por arquivo)
-  <slug>.html              16 perfis (board, presenters, founders)
-  heritage-equipment.html  Equipamentos Equipilates
+404.html                   Página de erro
+<slug>/index.html          Uma pasta por página interna (16 perfis + heritage-equipment)
 assets/
   css/
     base.css               Variáveis (cores, fonte), reset, tipografia, botões
@@ -23,25 +21,17 @@ assets/
     carousel.js            Carrossel de fotos do local
     forms.js               Formulários RD Station e popup
   images/                  backgrounds/ equipment/ hero/ location/ logo/ people/ sponsors/
-vercel.json                Rotas, redirecionamentos e cache
+vercel.json                Barra final nas URLs e cache
 robots.txt, sitemap.xml
 ```
 
-Todos os caminhos de CSS, JS e imagens são absolutos (`/assets/...`), então funcionam igual na home e nas páginas dentro de `pages/`.
+## URLs e caminhos
 
-## URLs
+Cada página interna é uma pasta com um `index.html`, então as URLs do site original (`/kathy-corey/`) funcionam em qualquer servidor de arquivos estáticos, sem regra de reescrita: Vercel, GitHub Pages ou Live Server.
 
-As URLs do site original foram mantidas. O `vercel.json` reescreve `/<slug>/` para `pages/<slug>.html`:
+Todos os caminhos são relativos (`assets/...` na home, `../assets/...` nas páginas internas), o que permite publicar o site também dentro de uma subpasta, como `usuario.github.io/pilatesheritagecongress/`. A exceção é a `404.html`, que usa caminhos a partir da raiz porque pode ser servida em qualquer profundidade; ela só aparece com estilo quando o site está na raiz do domínio.
 
-| URL pública            | Arquivo                         |
-| ---------------------- | ------------------------------- |
-| `/`                    | `index.html`                    |
-| `/kathy-corey/`        | `pages/kathy-corey.html`        |
-| `/heritage-equipment/` | `pages/heritage-equipment.html` |
-
-Acessos diretos a `/pages/<slug>` são redirecionados para `/<slug>/`.
-
-Para criar uma página nova, copie um arquivo de `pages/`, ajuste o conteúdo, o `<title>`, a descrição e o `canonical`, e inclua a URL no `sitemap.xml` e no menu (o menu está repetido em cada HTML).
+Para criar uma página nova, copie uma das pastas, ajuste o conteúdo, o `<title>`, a descrição e o `canonical`, e inclua a URL no `sitemap.xml` e no menu (o menu está repetido em cada HTML).
 
 ## Integrações
 
@@ -52,10 +42,10 @@ Presentes em todas as páginas, com as mesmas contas do site original:
 
 ## Rodar localmente
 
-Como as rotas dependem do `vercel.json`, use a CLI da Vercel:
+Qualquer servidor estático serve, por exemplo o Live Server do VS Code ou:
 
 ```bash
-npx vercel dev
+npx serve
 ```
 
 ## Publicar
